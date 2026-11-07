@@ -60,7 +60,6 @@ Temporary Items
 
 # Gradle build output
 /build
-/site
 
 # Other stuff
 /circuits
