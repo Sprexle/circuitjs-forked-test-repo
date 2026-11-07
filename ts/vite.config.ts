@@ -91,6 +91,7 @@ export default defineConfig({
   build: {
     assetsDir,
     copyPublicDir: false,
+    minify: false,
     rolldownOptions: {
       // circuitjs.html is the only page with app code. The other static
       // pages are copied by copyPublicAssets(), since codeSplitting: false
@@ -106,11 +107,7 @@ export default defineConfig({
         // Several element classes look up their own class name at runtime
         // (CircuitElm.getClassName() uses this.constructor.name) to resolve
         // types via ElementFactory. Minifying away class names breaks that.
-        minify: {
-          mangle: {
-            keepNames: { class: true, function: true }
-          }
-        }
+        minify: false,
       }
     }
   },
